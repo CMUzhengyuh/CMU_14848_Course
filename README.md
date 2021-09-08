@@ -1,5 +1,5 @@
 # CMU_14848_Course
-Repo for CMU 14848 Cloud Infrastructure Service
+Repo for CMU 14848 Cloud Infrastructure
 
 Student: Zhengyu HU
 
