@@ -18,7 +18,7 @@ https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
 
 2.  Screenshot for the execution of your docker container on GCP:
     
-    See: HW2_PartA
+    See: HW2/HW2/HW2_PartA
 
 3.  Dockerfile contents and the source code file:
 
@@ -52,4 +52,4 @@ https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
 
 Part B: Screenshot for running Jupyter notebook:
 
-See: HW2_PartB
+See: HW2/HW2/HW2_PartB
