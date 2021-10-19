@@ -1,0 +1,4 @@
+﻿Id,Temp,Conductivity,Concentration,URL
+1,-1,52,3.4,exp1.csv
+2,-2,52.1,3.4,exp2.csv
+3,-2.93,57.1,3.7,exp3.csv
