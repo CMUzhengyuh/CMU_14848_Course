@@ -56,6 +56,6 @@ See: HW2/HW2/HW2_PartB
 
 ---
 
-### Homework 2
+### Homework 3
 
 See: HW3/NoSQL
