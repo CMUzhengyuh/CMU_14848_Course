@@ -257,12 +257,12 @@ Part D: Steps to run Docker images on Kubernetes Engine.
    $ docker build -t *Image-name*
 
 4. Push docker image to my own dockerhub: <br/>
-   $ docker push hobo965859229/<Image-name>
+   $ docker push hobo965859229/ *Image-name*
 
-5. Complete my-<Application-name>-deployment.yaml and my-<Application-name>-serveice.yaml
+5. Complete my- *Application-name* -deployment.yaml and my- *Application-name* -serveice.yaml
 
 6. Open local Kubernete clusters then deploy images: <br/>
-   $ kubectl apply -f my-<Application-name>-deployment.yaml <br/>
-   $ kubectl apply -f my-<Application-name>-service.yaml
+   $ kubectl apply -f my- *Application-name* -deployment.yaml <br/>
+   $ kubectl apply -f my- *Application-name* -service.yaml
 
 
