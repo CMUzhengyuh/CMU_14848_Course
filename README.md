@@ -160,3 +160,9 @@ print(response3['Item'])
 print("Response is (Take Item 1 as an example):")
 print(response1)
 
+
+```
+
+---
+
+### Homework 3
