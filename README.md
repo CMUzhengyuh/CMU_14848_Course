@@ -226,7 +226,7 @@ public class main {
 Part B: Docker images of applications:
 
 1. URL for driver:
-   https://hub.docker.com/repository/docker/hobo965859229/my-driver
+   <https://hub.docker.com/repository/docker/hobo965859229/my-driver>
 
 2. URL for Jupyter Notebook: 
    https://hub.docker.com/repository/docker/hobo965859229/my-juypter-notebook
@@ -246,9 +246,9 @@ See:
 
 Part D: Steps to run Docker images on Kubernetes Engine.
 
-1. Driver for the application (Local Test): <\br>
-   $ javac main.java <\br>
-   $ java main <\br>
+1. Driver for the application (Local Test): <br/>
+   $ javac main.java <br/>
+   $ java main <br/>
    Function: Read shell input and map to corresponding URL
 
 2. Docker image Test: Complete Dockerfile for driver and 4 applications
