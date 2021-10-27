@@ -13,7 +13,7 @@ Time: 2021 Fall
 
 Part A:
 
-1. URL for your Docker image: 
+1. URL for your Docker image: <br/>
 https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
 
 2.  Screenshot for the execution of your docker container on GCP:
@@ -225,19 +225,19 @@ public class main {
 
 Part B: Docker images of applications:
 
-1. URL for driver:
+1. URL for driver: <br/>
    <https://hub.docker.com/repository/docker/hobo965859229/my-driver>
 
-2. URL for Jupyter Notebook: 
+2. URL for Jupyter Notebook: <br/>
    https://hub.docker.com/repository/docker/hobo965859229/my-juypter-notebook
 
-3. URL for Apache Hadoop:
+3. URL for Apache Hadoop: <br/>
    https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
 
-4. URL for Apache Spark:
+4. URL for Apache Spark: <br/>
    https://hub.docker.com/repository/docker/hobo965859229/my-spark
 
-5. URL for SonarQube & SonarScanner:
+5. URL for SonarQube & SonarScanner: <br/>
    https://hub.docker.com/repository/docker/hobo965859229/my-snoarqube
 
 Part C: Screenshot for the Kubernetes Engine with the containers running on it
@@ -253,16 +253,16 @@ Part D: Steps to run Docker images on Kubernetes Engine.
 
 2. Docker image Test: Complete Dockerfile for driver and 4 applications
 
-3. Built docker image:
+3. Built docker image: <br/>
    $ docker build -t <Image-name>
 
-4. Push docker image to my own dockerhub:
+4. Push docker image to my own dockerhub: <br/>
    $ docker push hobo965859229/<Image-name>
 
 5. Complete my-<Application-name>-deployment.yaml and my-<Application-name>-serveice.yaml
 
-6. Open local Kubernete clusters then deploy images:
-   $ kubectl apply -f my-<Application-name>-deployment.yaml
+6. Open local Kubernete clusters then deploy images: <br/>
+   $ kubectl apply -f my-<Application-name>-deployment.yaml <br/>
    $ kubectl apply -f my-<Application-name>-service.yaml
 
 
