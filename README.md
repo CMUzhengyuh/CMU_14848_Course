@@ -254,7 +254,7 @@ Part D: Steps to run Docker images on Kubernetes Engine.
 2. Docker image Test: Complete Dockerfile for driver and 4 applications
 
 3. Built docker image: <br/>
-   $ docker build -t <Image-name>
+   $ docker build -t *Image-name*
 
 4. Push docker image to my own dockerhub: <br/>
    $ docker push hobo965859229/<Image-name>
