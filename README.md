@@ -232,10 +232,10 @@ Part B: Docker images of applications:
    https://hub.docker.com/repository/docker/hobo965859229/my-juypter-notebook
 
 3. URL for Apache Hadoop:
-    https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
+   https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
 
 4. URL for Apache Spark:
-    https://hub.docker.com/repository/docker/hobo965859229/my-spark
+   https://hub.docker.com/repository/docker/hobo965859229/my-spark
 
 5. URL for SonarQube & SonarScanner:
    https://hub.docker.com/repository/docker/hobo965859229/my-snoarqube
@@ -245,4 +245,24 @@ Part C: Screenshot for the Kubernetes Engine with the containers running on it
 See: 
 
 Part D: Steps to run Docker images on Kubernetes Engine.
+
+1. Driver for the application (Local Test):
+   $ javac main.java
+   $ java main
+   Function: Read shell input and map to corresponding URL
+
+2. Docker image Test: Complete Dockerfile for driver and 4 applications
+
+3. Built docker image:
+   $ docker build -t <Image-name>
+
+4. Push docker image to my own dockerhub:
+   $ docker push hobo965859229/<Image-name>
+
+5. Complete my-<Application-name>-deployment.yaml and my-<Application-name>-serveice.yaml
+
+6. Open local Kubernete clusters then deploy images:
+   $ kubectl apply -f my-<Application-name>-deployment.yaml
+   $ kubectl apply -f my-<Application-name>-service.yaml
+
 
