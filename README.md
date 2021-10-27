@@ -226,14 +226,19 @@ public class main {
 Part B: Docker images of applications:
 
 1. URL for driver:
+   https://hub.docker.com/repository/docker/hobo965859229/my-driver
 
-2. URL for Jupyter Notebook:
+2. URL for Jupyter Notebook: 
+   https://hub.docker.com/repository/docker/hobo965859229/my-juypter-notebook
 
 3. URL for Apache Hadoop:
+    https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
 
 4. URL for Apache Spark:
+    https://hub.docker.com/repository/docker/hobo965859229/my-spark
 
 5. URL for SonarQube & SonarScanner:
+   https://hub.docker.com/repository/docker/hobo965859229/my-snoarqube
 
 Part C: Screenshot for the Kubernetes Engine with the containers running on it
 
