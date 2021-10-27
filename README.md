@@ -246,9 +246,9 @@ See:
 
 Part D: Steps to run Docker images on Kubernetes Engine.
 
-1. Driver for the application (Local Test):
-   $ javac main.java
-   $ java main
+1. Driver for the application (Local Test): <\br>
+   $ javac main.java <\br>
+   $ java main <\br>
    Function: Read shell input and map to corresponding URL
 
 2. Docker image Test: Complete Dockerfile for driver and 4 applications
