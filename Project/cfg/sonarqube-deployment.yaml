@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-sonarqube-deployment
+  labels:
+    app: my-sonarqube-deployment
+spec:
+  selector:
+     matchLabels:
+       app: my-sonarqube-deployment
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: my-sonarqube-deployment
+    spec:
+      containers:
+        - image: hobo965859229/my-sonarqube:v1.0
+          imagePullPolicy: Always
+          name: my-sonarqube-deployment
+          ports:
+            - containerPort: 9000

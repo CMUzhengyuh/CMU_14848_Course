@@ -229,7 +229,7 @@ Part B: Docker images of applications:
    <https://hub.docker.com/repository/docker/hobo965859229/my-driver>
 
 2. URL for Jupyter Notebook: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-juypter-notebook
+   https://hub.docker.com/repository/docker/hobo965859229/my-jupyter-notebook
 
 3. URL for Apache Hadoop: <br/>
    https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
@@ -238,13 +238,13 @@ Part B: Docker images of applications:
    https://hub.docker.com/repository/docker/hobo965859229/my-spark
 
 5. URL for SonarQube & SonarScanner: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-snoarqube
+   https://hub.docker.com/repository/docker/hobo965859229/my-sonarqube
 
-Part C: Screenshot for the Kubernetes Engine with the containers running on it
+Part C: Screenshot for the Kubernetes Engine with the containers running
 
 See: Project/Screenshot
 
-Part D: Steps to run Docker images on Kubernetes Engine.
+Part D: Steps to run Docker images on Kubernetes Engine
 
 1. Driver for the application (Local Test): <br/>
    $ javac main.java <br/>

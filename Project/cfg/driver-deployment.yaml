@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-driver
+  labels:
+    app: my-driver
+spec:
+  selector:
+     matchLabels:
+       app: my-driver
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: my-driver
+    spec:
+      containers:
+        - image: hobo965859229/my-driver:v1.0
+          imagePullPolicy: Always
+          name: my-driver
+          env:
+          - name: MY_HADOOP_API_URL
+            value: "http://my-hadoop"
+          - name: MY_SPARK_API_URL
+            value: "http://my-spark"
+          - name: MY_JUPYTER_NOTEOOK_API_URL
+            value: "http://my-jupyter-notebook"
+          - name: MY_SONARQUBE_API_URL
+            value: "http://my-sonarqube"
+          ports:
+            - containerPort: 8080
