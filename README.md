@@ -169,7 +169,7 @@ print(response1)
 
 Part A: Source code for the main terminal application:
 
-See: Project/src/main.java
+See: Project/src/main.java && Project/Terminal_Demo_Result.png
 
 ```Java
 import java.util.Scanner;
@@ -242,7 +242,8 @@ Part B: Docker images of applications:
 
 Part C: Screenshot for the Kubernetes Engine with the containers running
 
-See: Project/Screenshot
+See: Project/K8s_Result.png
+![avatar](Project/K8s_Result.png)
 
 Part D: Steps to run Docker images on Kubernetes Engine
 
