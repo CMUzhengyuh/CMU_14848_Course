@@ -14,11 +14,11 @@ Time: 2021 Fall
 Part A:
 
 1. URL for your Docker image: <br/>
-https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
+   https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
 
 2.  Screenshot for the execution of your docker container on GCP:
     
-    See: HW2/HW2/HW2_PartA
+    ![avatar](HW2/HW2/HW2_PartA.png)
 
 3.  Dockerfile contents and the source code file:
 
@@ -52,7 +52,7 @@ https://hub.docker.com/repository/docker/hobo965859229/hello-world/general
 
 Part B: Screenshot for running Jupyter notebook:
 
-See: HW2/HW2/HW2_PartB
+![avatar](HW2/HW2/HW2_PartB.jpg)
 
 ---
 
@@ -169,7 +169,7 @@ print(response1)
 
 Part A: Source code for the main terminal application:
 
-See: Project/src/main.java && Project/Terminal_Demo_Result.png
+![avatar](Project/Terminal_Demo_Result.png)
 
 ```Java
 import java.util.Scanner;
@@ -242,7 +242,6 @@ Part B: Docker images of applications:
 
 Part C: Screenshot for the Kubernetes Engine with the containers running
 
-See: Project/K8s_Result.png
 ![avatar](Project/K8s_Result.png)
 
 Part D: Steps to run Docker images on Kubernetes Engine
