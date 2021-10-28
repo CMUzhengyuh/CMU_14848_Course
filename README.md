@@ -165,11 +165,9 @@ print(response1)
 
 ---
 
-### Project - Checkpoint
+### Project - Checkpoint - Option 1
 
 Part A: Source code for the main terminal application:
-
-![avatar](Project/Terminal_Demo_Result.png)
 
 ```Java
 import java.util.Scanner;
@@ -222,6 +220,8 @@ public class main {
 }
 
 ```
+
+![avatar](Project/Terminal_Demo_Result.png)
 
 Part B: Docker images of applications:
 
