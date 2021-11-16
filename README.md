@@ -212,6 +212,7 @@ if current_date == date:
 ```
 
 3. Screenshot of Hadoop MapReduce Job in the terminal
+   
     ![avatar](HW4/GCP_MapReduce1.png)
     ![avatar](HW4/GCP_MapReduce2.png)
 
