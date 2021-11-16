@@ -162,6 +162,61 @@ print(response1)
 
 
 ```
+---
+
+### Homework 3
+
+See: HW4
+
+1. Mapper source code
+``` Python
+import sys
+
+for line in sys.stdin:
+    line = line.strip()
+    temperature = int(line[87:92])
+    q = int(line[92])
+    if ((temperature != 9999)) and (q == 0 or q == 1 or q == 4 or q == 5 or q == 9) == True:
+        print('%s\t%d' % (line[15:23], int(line[87:92])))
+
+```
+
+2. Reducer source code
+```Python
+from operator import itemgetter
+import sys
+
+current_date = None
+current_temperature = 0
+date = None
+
+for line in sys.stdin:
+    line = line.strip()
+    date, temperature = line.split('\t', 1)
+    try:
+        temperature = int(temperature)
+    except ValueError:
+        continue
+
+    if current_date == date:
+        if temperature > current_temperature:
+            current_temperature = temperature
+    else:
+        if current_date:
+            print('%s\t%d' % (current_date, current_temperature))
+        current_temperature = temperature
+        current_date = date
+
+if current_date == date:
+    print('%s\t%d' % (current_date, current_temperature))
+```
+
+3. Screenshot of Hadoop MapReduce Job in the terminal
+    ![avatar](HW4/GCP_MapReduce1.png)
+    ![avatar](HW4/GCP_MapReduce2.png)
+
+4. Output file of results:
+    See: HW4/maximumTemperatureByDay
 
 ---
 
