@@ -168,7 +168,7 @@ print(response1)
 
 See: HW4
 
-1. Mapper source code
+1. Mapper source code:
 ``` Python
 import sys
 
@@ -181,7 +181,7 @@ for line in sys.stdin:
 
 ```
 
-2. Reducer source code
+2. Reducer source code:
 ```Python
 from operator import itemgetter
 import sys
@@ -211,12 +211,12 @@ if current_date == date:
     print('%s\t%d' % (current_date, current_temperature))
 ```
 
-3. Screenshot of Hadoop MapReduce Job in the terminal
+3. Screenshot of Hadoop MapReduce Job in the terminal:
    
     ![avatar](HW4/GCP_MapReduce1.png)
     ![avatar](HW4/GCP_MapReduce2.png)
 
-4. Output file of results:
+4. Output file of results: <br/>
     See: HW4/maximumTemperatureByDay
 
 ---
