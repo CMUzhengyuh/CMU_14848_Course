@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: section-sonarqube
 spec:
-  type: LoadBalancer      
   ports:
     - port: 9000
       protocol: TCP
