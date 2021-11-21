@@ -10,12 +10,12 @@ import (
 	"strings"
 )
 
-
+// sendRequest Send requests to driver
 func sendRequest(conn net.Conn, text string) {
 	conn.Write([]byte(text))
-	fmt.Printf("send over %s\n",text)
 }
 
+// receiveRespond Receive requests from driver
 func receiveRespond(conn net.Conn) string{
 	buffer := make([]byte, 2048)
 	n, err := conn.Read(buffer)
@@ -67,7 +67,8 @@ func terminal(conn net.Conn) {
 }
 
 func main() {
-	server := "34.71.164.18:6666"
+	// Hard code GCP external IPs
+	server := "35.202.46.187:6666"
 	tcpAddr, err := net.ResolveTCPAddr("tcp4", server)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())

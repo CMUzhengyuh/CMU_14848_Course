@@ -10,41 +10,23 @@ import (
 	"os"
 )
 
-func NewProxy(targetHost string) *httputil.ReverseProxy {
+// Create a new proxy
+func newProxy(targetHost string) *httputil.ReverseProxy {
 	url, err := url.Parse(targetHost)
 	if err != nil {
 		return nil
 	}
-
+	// Create a proxy to convert the internal port of K8s to external IPs
 	return httputil.NewSingleHostReverseProxy(url)
 }
 
-func proxyServer(proxyUrl string, addr string) {
-	//被代理的服务器host和port
-	fmt.Println(proxyUrl)
-	serveErr := http.ListenAndServe(addr, NewProxy(proxyUrl))
-	if serveErr != nil {
-		panic(serveErr)
-	}
-}
-
+// Establish the proxy server
 func establishProxy(){
-	JupyterNotebook := os.Getenv("JUPYTER_NOTEBOOK")
-	//JupyterNotebook:="http://localhost"
-	JupyterUrl := JupyterNotebook + ":8888"
-	//jupyterUrl := "https://www.baidu.com"
-
-	SonarQube := os.Getenv("SONARQUBE")
-	//Spark:="http://localhost"
-	SonarQubeUrl := SonarQube + ":9000"
-
-	Spark := os.Getenv("SPARK")
-	//Spark:="http://localhost"
-	SparkUrl := Spark + ":8080"
-
-	Hadoop := os.Getenv("HADOOP")
-	//Spark:="http://localhost"
-	HadoopUrl := Hadoop + ":50070"
+	// Internal Ports defined by YAML
+	JupyterUrl := os.Getenv("JUPYTER_NOTEBOOK") + ":8888"
+	SonarQubeUrl  := os.Getenv("SONARQUBE") + ":9000"
+	SparkUrl  := os.Getenv("SPARK") + ":8080"
+	HadoopUrl := os.Getenv("HADOOP") + ":50070"
 
 	go proxyServer(HadoopUrl,":6766")
 	go proxyServer(SparkUrl,":6866")
@@ -53,52 +35,58 @@ func establishProxy(){
 
 }
 
-func sendRequest(conn net.Conn, text string) {
-	conn.Write([]byte(text))
-	fmt.Printf("send over %s\n",text)
+// Start service
+func proxyServer(proxyUrl string, addr string) {
+	_ = http.ListenAndServe(addr, newProxy(proxyUrl))
+}
+
+// Send back URL to clients
+func sendRequest(conn net.Conn, url string) {
+	conn.Write([]byte(url))
+	fmt.Printf("Send back URL: %s\n", url)
 }
 
 func main() {
 
-	//建立socket，监听端口
+	// Establish the socket
 	addr,_:=net.ResolveTCPAddr("tcp4", ":6666")
 
 	netListen, err := net.ListenTCP("tcp", addr)
 	CheckError(err)
 	defer netListen.Close()
-	establishProxy()
 
-	Log("Waiting for clients")
+	// Establish the proxy server
+	establishProxy()
 	for {
 		conn, err := netListen.Accept()
 		if err != nil {
 			continue
 		}
-		Log(conn.RemoteAddr().String(), " tcp connect success")
+
+		// Handlle new connection
 		handleConnection(conn)
 	}
 }
-//处理连接
+
+// Hard code of expose GCP internal IPs to external URLs
 func handleConnection(conn net.Conn) {
-	currentIP := "35.202.46.187"
 	buffer := make([]byte, 2048)
 	for {
 		n, err := conn.Read(buffer)
 		if err != nil {
-			Log(conn.RemoteAddr().String(), " connection error: ", err)
 			return
 		}
-		Log(conn.RemoteAddr().String(), "receive data string:\n", string(buffer[:n]))
 		receiveData := string(buffer[:n])
 		switch receiveData {
+		// Format: "http:// <GCP_IPS> : <PORTS>"
 		case "1":
-			sendRequest(conn,"http://"+currentIP+":6766")
+			sendRequest(conn,"http://35.202.46.187:6766")
 		case "2":
-			sendRequest(conn,"http://"+currentIP+":6866")
+			sendRequest(conn,"http://35.202.46.187:6866")
 		case "3":
-			sendRequest(conn,"http://"+currentIP+":6966")
+			sendRequest(conn,"http://35.202.46.187:6966")
 		case "4":
-			sendRequest(conn,"http://"+currentIP+":6070")
+			sendRequest(conn,"http://35.202.46.187:6070")
 		}
 	}
 }
