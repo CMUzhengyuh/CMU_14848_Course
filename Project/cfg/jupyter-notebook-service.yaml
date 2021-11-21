@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: my-jupyter
 spec:
+  type: LoadBalancer 
   ports:
     - port: 8888
       protocol: TCP
