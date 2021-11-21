@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-jupyter-notebook
+  name: my-jupyter
   labels:
-    app: my-jupyter-notebook
+    app: my-jupyter
 spec:
   selector:
      matchLabels:
-       app: my-jupyter-notebook
-  replicas: 2
+       app: my-jupyter
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: my-jupyter-notebook
+        app: my-jupyter
     spec:
       containers:
-        - image: hobo965859229/my-juypter-notebook:v1.0
+        - image: hobo965859229/jupyter-notebook:v1.0
           imagePullPolicy: Always
-          name: my-jupyter-notebook
+          name: my-jupyter
           ports:
             - containerPort: 8888

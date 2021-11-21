@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-driver
+  name: my-driver-deployment
   labels:
-    app: my-driver
+    app: my-driver-deployment
 spec:
   selector:
      matchLabels:
-       app: my-driver
-  replicas: 2
+       app: my-driver-deployment
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -18,20 +18,24 @@ spec:
   template:
     metadata:
       labels:
-        app: my-driver
+        app: my-driver-deployment
     spec:
       containers:
-        - image: hobo965859229/my-driver:v1.0
+        - image: haoyup/driver:v1
           imagePullPolicy: Always
-          name: my-driver
+          name: my-driver-deployment
           env:
-          - name: MY_HADOOP_API_URL
-            value: "http://my-hadoop"
-          - name: MY_SPARK_API_URL
-            value: "http://my-spark"
-          - name: MY_JUPYTER_NOTEOOK_API_URL
-            value: "http://my-jupyter-notebook"
-          - name: MY_SONARQUBE_API_URL
-            value: "http://my-sonarqube"
+            - name: JUPYTER_NOTEBOOK
+              value: "http://my-jupyter"
+            - name: SPARK
+              value: "http://my-spark"
+            - name: SONARQUBE
+              value: "http://my-sonarqube"
+            - name: HADOOP
+              value: "http://hadoop-hdfs-master"
           ports:
-            - containerPort: 8080
+            - containerPort: 6666
+            - containerPort: 6667
+            - containerPort: 6668
+            - containerPort: 6669
+            - containerPort: 6070

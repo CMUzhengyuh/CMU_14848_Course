@@ -8,7 +8,7 @@ spec:
   selector:
      matchLabels:
        app: my-spark
-  replicas: 2
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -21,7 +21,7 @@ spec:
         app: my-spark
     spec:
       containers:
-        - image: hobo965859229/my-spark:v1.0
+        - image: hobo965859229/spark:v1.0
           imagePullPolicy: Always
           name: my-spark
           ports:
