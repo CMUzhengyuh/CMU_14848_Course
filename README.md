@@ -298,7 +298,7 @@ Part B: Docker images of applications:
 
 Part C: Screenshot for the Kubernetes Engine with the containers running
 
-![avatar](Project/K8s_Result.png)
+![avatar](Project/Screenshot/K8s_Result.png)
 
 Part D: Steps to run Docker images on Kubernetes Engine
 
