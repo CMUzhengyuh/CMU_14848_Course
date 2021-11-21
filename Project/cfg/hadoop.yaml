@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: hdfs-master
-          image: hobo965859229/hadoop:latest
+          image: kubeguide/hadoop:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9000
@@ -78,7 +78,7 @@ spec:
     spec:
       containers:
         - name: hadoop-datanode
-          image: hobo965859229/hadoop:latest
+          image: kubeguide/hadoop:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9000
@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
         - name: yarn-master
-          image: hobo965859229/hadoop:latest
+          image: kubeguide/hadoop:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9000
@@ -183,7 +183,7 @@ spec:
     spec:
       containers:
         - name: yarn-node
-          image: hobo965859229/hadoop:latest
+          image: kubeguide/hadoop:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8040
