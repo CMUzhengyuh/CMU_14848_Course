@@ -21,7 +21,7 @@ spec:
         app: my-driver-deployment
     spec:
       containers:
-        - image: haoyup/driver:v1
+        - image: hobo965859229/driver:v2.0
           imagePullPolicy: Always
           name: my-driver-deployment
           env:

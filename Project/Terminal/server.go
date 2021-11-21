@@ -80,7 +80,7 @@ func main() {
 }
 //处理连接
 func handleConnection(conn net.Conn) {
-	currentIP := "34.136.171.185"
+	currentIP := "34.71.164.18"
 	buffer := make([]byte, 2048)
 	for {
 		n, err := conn.Read(buffer)

