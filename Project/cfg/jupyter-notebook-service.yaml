@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: section-jupyter
 spec:
+  type: LoadBalancer      
   ports:
     - port: 8888
       protocol: TCP

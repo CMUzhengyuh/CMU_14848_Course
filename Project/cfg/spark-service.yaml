@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: section-spark
 spec:
+  type: LoadBalancer      
   ports:
     - port: 8080
       protocol: TCP
