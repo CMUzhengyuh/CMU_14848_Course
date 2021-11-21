@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-spark
+  name: section-spark
 spec:
   ports:
     - port: 8080
       protocol: TCP
       targetPort: 8080
   selector:
-    app: my-spark
+    app: section-spark

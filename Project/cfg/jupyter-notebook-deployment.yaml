@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-jupyter
+  name: section-jupyter
   labels:
-    app: my-jupyter
+    app: section-jupyter
 spec:
   selector:
      matchLabels:
-       app: my-jupyter
+       app: section-jupyter
   replicas: 1
   minReadySeconds: 15
   strategy:
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: my-jupyter
+        app: section-jupyter
     spec:
       containers:
         - image: haoyup/jupyter-notebook:v1
           imagePullPolicy: Always
-          name: my-jupyter
+          name: section-jupyter
           ports:
             - containerPort: 8888

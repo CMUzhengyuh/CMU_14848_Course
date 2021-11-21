@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-sonarqube
+  name: section-sonarqube
   labels:
-    app: my-sonarqube
+    app: section-sonarqube
 spec:
   selector:
      matchLabels:
-       app: my-sonarqube
+       app: section-sonarqube
   replicas: 1
   minReadySeconds: 15
   strategy:
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: my-sonarqube
+        app: section-sonarqube
     spec:
       containers:
         - image: hobo965859229/sonarqube:v1.0
           imagePullPolicy: Always
-          name: my-sonarqube
+          name: section-sonarqube
           ports:
             - containerPort: 9000

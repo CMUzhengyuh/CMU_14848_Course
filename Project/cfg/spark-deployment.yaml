@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-spark
+  name: section-spark
   labels:
-    app: my-spark
+    app: section-spark
 spec:
   selector:
      matchLabels:
-       app: my-spark
+       app: section-spark
   replicas: 1
   minReadySeconds: 15
   strategy:
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: my-spark
+        app: section-spark
     spec:
       containers:
         - image: hobo965859229/spark:v1.0
           imagePullPolicy: Always
-          name: my-spark
+          name: section-spark
           ports:
             - containerPort: 8080

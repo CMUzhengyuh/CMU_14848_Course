@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-driver-deployment
+  name: section-driver-deployment
   labels:
-    app: my-driver-deployment
+    app: section-driver-deployment
 spec:
   selector:
      matchLabels:
-       app: my-driver-deployment
+       app: section-driver-deployment
   replicas: 1
   minReadySeconds: 15
   strategy:
@@ -18,24 +18,24 @@ spec:
   template:
     metadata:
       labels:
-        app: my-driver-deployment
+        app: section-driver-deployment
     spec:
       containers:
-        - image: hobo965859229/driver:v2.0
+        - image: hobo965859229/driver:v3.0
           imagePullPolicy: Always
-          name: my-driver-deployment
+          name: section-driver-deployment
           env:
             - name: JUPYTER_NOTEBOOK
-              value: "http://my-jupyter"
+              value: "http://section-jupyter"
             - name: SPARK
-              value: "http://my-spark"
+              value: "http://section-spark"
             - name: SONARQUBE
-              value: "http://my-sonarqube"
+              value: "http://section-sonarqube"
             - name: HADOOP
               value: "http://hadoop-hdfs-master"
           ports:
             - containerPort: 6666
-            - containerPort: 6667
-            - containerPort: 6668
-            - containerPort: 6669
+            - containerPort: 6766
+            - containerPort: 6866
+            - containerPort: 6966
             - containerPort: 6070

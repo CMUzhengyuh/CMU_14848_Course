@@ -46,10 +46,10 @@ func establishProxy(){
 	//Spark:="http://localhost"
 	HadoopUrl := Hadoop + ":50070"
 
-	go proxyServer(JupyterUrl,":6667")
-	go proxyServer(SparkUrl,":6668")
-	go proxyServer(SonarQubeUrl,":6669")
-	go proxyServer(HadoopUrl,":6070")
+	go proxyServer(HadoopUrl,":6766")
+	go proxyServer(SparkUrl,":6866")
+	go proxyServer(JupyterUrl,":6966")
+	go proxyServer(SonarQubeUrl,":6070")
 
 }
 
@@ -92,11 +92,11 @@ func handleConnection(conn net.Conn) {
 		receiveData := string(buffer[:n])
 		switch receiveData {
 		case "1":
-			sendRequest(conn,"http://"+currentIP+":6667")
+			sendRequest(conn,"http://"+currentIP+":6766")
 		case "2":
-			sendRequest(conn,"http://"+currentIP+":6668")
+			sendRequest(conn,"http://"+currentIP+":6866")
 		case "3":
-			sendRequest(conn,"http://"+currentIP+":6669")
+			sendRequest(conn,"http://"+currentIP+":6966")
 		case "4":
 			sendRequest(conn,"http://"+currentIP+":6070")
 		}
