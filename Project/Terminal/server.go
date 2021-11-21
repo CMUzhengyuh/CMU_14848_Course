@@ -80,7 +80,7 @@ func main() {
 }
 //处理连接
 func handleConnection(conn net.Conn) {
-	currentIP := "34.71.164.18"
+	currentIP := "35.202.46.187"
 	buffer := make([]byte, 2048)
 	for {
 		n, err := conn.Read(buffer)
@@ -92,11 +92,11 @@ func handleConnection(conn net.Conn) {
 		receiveData := string(buffer[:n])
 		switch receiveData {
 		case "1":
-			sendRequest(conn,"http://"+currentIP+":6766")
+			sendRequest(conn,"http://34.134.47.101:8888")
 		case "2":
-			sendRequest(conn,"http://"+currentIP+":6866")
+			sendRequest(conn,"http://34.135.7.97:9000")
 		case "3":
-			sendRequest(conn,"http://"+currentIP+":6966")
+			sendRequest(conn,"http://34.71.164.18:8080")
 		case "4":
 			sendRequest(conn,"http://"+currentIP+":6070")
 		}

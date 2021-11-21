@@ -9,21 +9,21 @@ spec:
     protocol: TCP         
     targetPort: 6666
     name: server    
-  - port: 6667           
-    protocol: TCP         
-    targetPort: 6667      
-    name: hadoop
-  - port: 6668             
-    protocol: TCP          
-    targetPort: 6668        
-    name: spark
-  - port: 6669            
-    protocol: TCP         
-    targetPort: 6669      
-    name: jupyter
   - port: 6070          
+    protocol: TCP         
+    targetPort: 6070    
+    name: hadoop
+  - port: 6766             
     protocol: TCP          
-    targetPort: 6070         
+    targetPort: 6766        
+    name: spark
+  - port: 6866           
+    protocol: TCP         
+    targetPort: 6866      
+    name: jupyter
+  - port: 6966       
+    protocol: TCP          
+    targetPort: 6966        
     name: sonarqube
   selector:                
     app:  section-driver-deployment      
