@@ -21,7 +21,7 @@ spec:
         app: my-jupyter
     spec:
       containers:
-        - image: hobo965859229/jupyter-notebook:v1.0
+        - image: haoyup/jupyter-notebook:v1
           imagePullPolicy: Always
           name: my-jupyter
           ports:
