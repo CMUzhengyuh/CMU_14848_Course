@@ -38,7 +38,7 @@ func open(url string) error {
 		args = []string{"/c","start"}
 	case "darwin":
 		cmd = "open"
-	default: // "linux", "freebsd", "openbsd", "netbsd"
+	default:
 		cmd = "xdg-open"
 	}
 	args = append(args, url)
@@ -58,7 +58,6 @@ func terminal(conn net.Conn) {
 		fmt.Println("Type the number here >")
 
 		text, _ := reader.ReadString('\n')
-		// convert CRLF to LF
 		text = strings.Replace(text, "\n", "", -1)
 		sendRequest(conn,text)
 		website := receiveRespond(conn)

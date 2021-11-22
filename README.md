@@ -412,7 +412,7 @@ func open(url string) error {
 		args = []string{"/c","start"}
 	case "darwin":
 		cmd = "open"
-	default: // "linux", "freebsd", "openbsd", "netbsd"
+	default:
 		cmd = "xdg-open"
 	}
 	args = append(args, url)
@@ -432,7 +432,6 @@ func terminal(conn net.Conn) {
 		fmt.Println("Type the number here >")
 
 		text, _ := reader.ReadString('\n')
-		// convert CRLF to LF
 		text = strings.Replace(text, "\n", "", -1)
 		sendRequest(conn,text)
 		website := receiveRespond(conn)
@@ -467,13 +466,13 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"log"
+    "net/http/httputil"
+	"os"
+    "fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"os"
 )
 
 // Create a new proxy
@@ -556,20 +555,27 @@ func handleConnection(conn net.Conn) {
 		}
 	}
 }
-
-func Log(v ...interface{}) {
-	log.Println(v...)
-}
-
-func CheckError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-		os.Exit(1)
-	}
-}
 ```
 
-Part E: Steps to run the whole project
+
+Part E: Docker images of applications:
+
+1. URL for driver: <br/>
+   https://hub.docker.com/repository/docker/hobo965859229/my-driver
+
+2. URL for Jupyter Notebook: <br/>
+   https://hub.docker.com/repository/docker/hobo965859229/my-jupyter-notebook
+
+3. URL for Apache Hadoop: <br/>
+   https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
+
+4. URL for Apache Spark: <br/>
+   https://hub.docker.com/repository/docker/hobo965859229/my-spark
+
+5. URL for SonarQube & SonarScanner: <br/>
+   https://hub.docker.com/repository/docker/hobo965859229/my-sonarqube
+
+Part F: Steps to run the whole project
 
 1. Driver for the application (Local Test): <br/>
    $ javac main.java <br/>
@@ -589,7 +595,7 @@ Part E: Steps to run the whole project
 6. Open local Kubernete clusters then deploy images: <br/>
    $ kubectl apply -f my- *Application-name* -deployment.yaml <br/>
    $ kubectl apply -f my- *Application-name* -service.yaml
-   
+
 ![avatar](Project/Screenshot/.png)
 
 ![avatar](Project/Screenshot/.png)

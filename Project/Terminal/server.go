@@ -1,13 +1,12 @@
 package main
 
 import (
+	"net/http/httputil"
+	"os"
 	"fmt"
-	"log"
 	"net"
 	"net/http"
-	"net/http/httputil"
 	"net/url"
-	"os"
 )
 
 // Create a new proxy
@@ -51,8 +50,7 @@ func main() {
 	// Establish the socket
 	addr,_:=net.ResolveTCPAddr("tcp4", ":6666")
 
-	netListen, err := net.ListenTCP("tcp", addr)
-	CheckError(err)
+	netListen, _ := net.ListenTCP("tcp", addr)
 	defer netListen.Close()
 
 	// Establish the proxy server
@@ -91,13 +89,3 @@ func handleConnection(conn net.Conn) {
 	}
 }
 
-func Log(v ...interface{}) {
-	log.Println(v...)
-}
-
-func CheckError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-		os.Exit(1)
-	}
-}
