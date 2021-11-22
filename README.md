@@ -561,19 +561,19 @@ func handleConnection(conn net.Conn) {
 Part E: Docker images of applications:
 
 1. URL for driver: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-driver
+   https://hub.docker.com/repository/docker/hobo965859229/driver
 
 2. URL for Jupyter Notebook: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-jupyter-notebook
+   https://hub.docker.com/repository/docker/hobo965859229/jupyter-notebook
 
 3. URL for Apache Hadoop: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-hadoop
+   https://hub.docker.com/repository/docker/hobo965859229/hadoop
 
 4. URL for Apache Spark: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-spark
+   https://hub.docker.com/repository/docker/hobo965859229/spark
 
 5. URL for SonarQube & SonarScanner: <br/>
-   https://hub.docker.com/repository/docker/hobo965859229/my-sonarqube
+   https://hub.docker.com/repository/docker/hobo965859229/sonarqube
 
 Part F: Steps to run the whole project
 
