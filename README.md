@@ -321,6 +321,8 @@ Part D: Steps to run Docker images on Kubernetes Engine
    $ kubectl apply -f my- *Application-name* -deployment.yaml <br/>
    $ kubectl apply -f my- *Application-name* -service.yaml
 
+---
+
 ### Project - Final - Option 1
 
 Part A: Demo Vedio:
