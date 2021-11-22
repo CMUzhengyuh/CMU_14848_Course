@@ -619,14 +619,33 @@ Part F: Steps to run the whole project
     -service.yaml: $ kubectl apply -f *Application-name* -service.yaml <br/>
     hadoop.yaml: $ kubectl create -f hadoop.yaml
 
-12. After Step 11 GCP shell will
+12. After Step 11 GCP shell would be like this:
 
-![avatar](Project/Screenshot/.png)
+![avatar](Project/Screenshot/deploy.png)
 
-![avatar](Project/Screenshot/.png)
-![avatar](Project/Screenshot/.png)
-![avatar](Project/Screenshot/.png)
-![avatar](Project/Screenshot/.png)
+13. Check the Service & Ingress section of Kubernetes Engine
 
+![avatar](Project/Screenshot/K8s_Service.png)
 
+14. Update the exposed IPs of section-driver-service to local server.go
 
+15. Write hard code of IP:35.202.46.187 to server.go
+
+16. Rebuild the image and update the version: <br/>
+    $ docker build -t hobo965859229/driver:v2.0 <br/>
+    $ docker push hobo965859229/driver:v2.0
+
+17. Re-deploy the service of driver so that Kubernetes can run the latest driver <br/>
+    $ kubectl apply -f driver-service.yaml
+
+18. Keep GCP Kubernetes running and open the client in local shell <br/>
+    $ ~/CMU_14848_Course/Project/UI
+
+19. Build the client shell locally <br/>
+    $ go build client.go
+
+![avatar](Project/Screenshot/Client_Build.png)
+
+20. Open the client Unix file and start experience the tool
+
+![avatar](Project/Screenshot/Client_Interface.png)
