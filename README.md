@@ -577,24 +577,49 @@ Part E: Docker images of applications:
 
 Part F: Steps to run the whole project
 
-1. Driver for the application (Local Test): <br/>
-   $ javac main.java <br/>
-   $ java main <br/>
-   Function: Read shell input and map to corresponding URL
+1. Find 4 available applications and pack them to Docker images (See Part E) <br/>
+    $ docker build -t *Image-name* <br/>
+    $ docker push hobo965859229/ *Image-name* : v1.0
 
-2. Docker image Test: Complete Dockerfile for driver and 4 applications
+2. Prepare deployment and service YAML files for GCP Kubernetes (See Project/cfg)
+    
+3. Construct the driver based on a Golang container (See Project/Terminal) <br/>
+    $ docker build -t hobo965859229/driver:v1.0 <br/>
+    $ docker push hobo965859229/driver:v1.0
 
-3. Built docker image: <br/>
-   $ docker build -t *Image-name*
+![avatar](Project/Screenshot/Driver_Image.png)
 
-4. Push docker image to my own dockerhub: <br/>
-   $ docker push hobo965859229/ *Image-name*
+4. Now we can see all docker images run locally:
+   
+![avatar](Project/Screenshot/Local_Image.png)
 
-5. Complete my- *Application-name* -deployment.yaml and my- *Application-name* -serveice.yaml
+5. Upload all local files to GitHub: https://github.com/CMUzhengyuh/CMU_14848_Course
 
-6. Open local Kubernete clusters then deploy images: <br/>
-   $ kubectl apply -f my- *Application-name* -deployment.yaml <br/>
-   $ kubectl apply -f my- *Application-name* -service.yaml
+6. Afterwards, we can start deploy all the services and deployment to GCP
+
+7. Create a GCP Kubernetes cluster with the following configuration:
+
+![avatar](Project/Screenshot/Final_Create_K8s_Cluster.png)
+![avatar](Project/Screenshot/Final_Create_K8s_Cluster_Configuration.png)
+
+8. Open the Cloud shell and go into the Kubernete cluster
+
+![avatar](Project/Screenshot/K8s_Shell.png)
+
+9. Git clone contents from my public repository: <br/>
+    $ git clone https://github.com/CMUzhengyuh/CMU_14848_Course.git
+
+![avatar](Project/Screenshot/Git.png)
+
+10. Set the directory to Project/cfg <br/>
+    $ cd CMU_14848_Course/Project/cfg
+
+11. Deploy all the YAML file on Kubernetes <br/>
+    -deployment.yaml: $ kubectl apply -f *Application-name* -deployment.yaml <br/>
+    -service.yaml: $ kubectl apply -f *Application-name* -service.yaml <br/>
+    hadoop.yaml: $ kubectl create -f hadoop.yaml
+
+12. After Step 11 GCP shell will
 
 ![avatar](Project/Screenshot/.png)
 
