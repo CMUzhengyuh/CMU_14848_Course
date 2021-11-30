@@ -18,7 +18,7 @@ Part A:
 
 2.  Screenshot for the execution of your docker container on GCP:
     
-    ![avatar](HW2/HW2/HW2_PartA.png)
+    ![avatar](HW2/HW2_PartA.png)
 
 3.  Dockerfile contents and the source code file:
 
@@ -52,7 +52,7 @@ Part A:
 
 Part B: Screenshot for running Jupyter notebook:
 
-![avatar](HW2/HW2/HW2_PartB.jpg)
+![avatar](HW2/HW2_PartB.jpg)
 
 ---
 
