@@ -278,7 +278,8 @@ f.write(spark_result)
 f.close()
 ```
 
-2. Spark Result: HW5/output.txt
+2. Spark Result: 
+   See: HW5/output.txt
 
 3. Screenshot for Jupyter Notebook and Spark Container:
 
